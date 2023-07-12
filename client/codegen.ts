@@ -14,7 +14,6 @@ const config: CodegenConfig = {
       plugins: []
     },
   },
-  ignoreNoDocuments: true,
 };
 
 export default config;
