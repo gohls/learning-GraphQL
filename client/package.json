@@ -20,7 +20,8 @@
   "scripts": {
     "test": "vitest",
     "start": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "browserslist": {
     "production": [
@@ -35,8 +36,8 @@
     ]
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^4.0.1",
-    "@graphql-codegen/client-preset": "^4.0.1",
+    "@graphql-codegen/cli": "4.0.1",
+    "@graphql-codegen/client-preset": "4.0.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
