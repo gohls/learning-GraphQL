@@ -1,13 +1,14 @@
-import gql from 'graphql-tag';
+import gql from "graphql-tag";
 
 export const typeDefs = gql`
   type Query {
-    tracksForHome: [Track!]! 
+    tracksForHome: [Track!]!
+    track(id: ID!): Track
   }
 
-   """
-   A track is a group of Modules that teaches about a specific topic
-   """
+  """
+  A track is a group of Modules that teaches about a specific topic
+  """
   type Track {
     id: ID!
     "The track's title"
@@ -20,6 +21,21 @@ export const typeDefs = gql`
     length: Int
     "The number of modules this track contains"
     modulesCount: Int
+    "The track's complete description, can be in Markdown format"
+    description: String
+    "The number of times the track has been watched"
+    numberOfViews: Int
+    "The modules included in the track"
+    modules: [Module!]!
+  }
+
+  "A Module is a single unit of teaching to complete a Track"
+  type Module {
+    id: ID!
+    "The module's title"
+    title: String!
+    "The module's approximate length to complete, in minutes"
+    length: Int
   }
 
   """
